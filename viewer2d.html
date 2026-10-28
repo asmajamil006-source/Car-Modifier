@@ -1,0 +1,10 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0;background:transparent;font-family:system-ui}svg{display:block;width:100%;height:auto}.w1{animation:spin 1.1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.road{animation:road .5s linear infinite}@keyframes road{to{stroke-dashoffset:-40}}</style>
+<div id="stage" style="border-radius:12px;overflow:hidden"></div>
+<script>
+/*DATA*/
+/*R2D*/
+const D={model:"civic",color:0,fin:0,kit:0,spo:0,light:0,drop:0,rim:0,rimc:0,size:0,dash:0,seat:0,steer:0,amb:0,eng:0,gear:0,tint:1,str:0,roof:0,ug:0,cal:0,scene:0,cmp:0,cmpPos:50,spin:false,view:"exterior"};
+const S=Object.assign({},D,__BUILD__);
+document.getElementById("stage").innerHTML=S.view=="interior"?inter():car();
+document.addEventListener("input",e=>{if(e.target.id=="cmpr"){S.cmpPos=+e.target.value;document.getElementById("top").style.clipPath="inset(0 "+(100-S.cmpPos)+"% 0 0)";document.getElementById("ln").style.left=S.cmpPos+"%"}});
+</script>
